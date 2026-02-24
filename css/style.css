@@ -198,6 +198,11 @@ footer a:hover {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 1s forwards 0.4s;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 @keyframes fadeUp {
@@ -213,7 +218,6 @@ footer a:hover {
   padding: 1rem 2.5rem;
   color: white;
   text-decoration: none;
-  margin-right: 1rem;
   transition: 0.3s;
   border: 2px solid var(--primary-orange);
   border-radius: 4px;
@@ -1118,5 +1122,13 @@ textarea:focus {
   .navbar-collapse {
     background: var(--accent-blue);
     text-align: center;
+  }
+
+  .btn-primary-hero,
+  .btn-secondary-hero {
+    padding: 0.6rem 1.2rem;
+  }
+  .hero-arrow {
+    display: none;
   }
 }
