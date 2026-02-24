@@ -1123,6 +1123,9 @@ textarea:focus {
     background: var(--accent-blue);
     text-align: center;
   }
+  .hero-buttons {
+    padding-top: 0;
+  }
 
   .btn-primary-hero,
   .btn-secondary-hero {
