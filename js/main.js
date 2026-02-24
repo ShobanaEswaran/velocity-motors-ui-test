@@ -91,13 +91,18 @@ today.setDate(today.getDate() + 1);
 dateInput.min = today.toISOString().split("T")[0];
 
 function showError(input, message) {
+  const error = input.parentElement.querySelector(".error-message");
   input.classList.add("error");
-  input.nextElementSibling.textContent = message;
+  error.textContent = message;
+
+  // input.classList.add("error");
+  // input.nextElementSibling.textContent = message;
 }
 
 function clearError(input) {
+  const error = input.parentElement.querySelector(".error-message");
   input.classList.remove("error");
-  input.nextElementSibling.textContent = "";
+  error.textContent = "";
 }
 
 function validateField(input) {
@@ -108,7 +113,7 @@ function validateField(input) {
   }
 
   if (input.id === "email") {
-    const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!pattern.test(value)) return "Enter valid email";
   }
 
@@ -153,9 +158,11 @@ form.addEventListener("submit", function (e) {
   });
 
   // Checkbox validation
+  const errorMessage = document.querySelector("#terms-error");
   const terms = document.getElementById("terms");
+
   if (!terms.checked) {
-    terms.nextElementSibling.nextElementSibling.textContent = "You must agree to terms";
+    errorMessage.textContent = "You must agree to terms";
     isValid = false;
   }
 
