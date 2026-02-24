@@ -1,59 +1,78 @@
-window.addEventListener("scroll", () => {
-  const header = document.getElementById("main-navbar");
+document.addEventListener("DOMContentLoaded", () => {
+  // ALL your JS here
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".dot");
+  let currentSlide = 0;
+  let interval = setInterval(nextSlide, 5000);
 
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
+  function showSlide(index) {
+    slides.forEach((slide) => slide.classList.remove("active"));
+    dots.forEach((dot) => dot.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+    currentSlide = index;
   }
-});
 
-const slides = document.querySelectorAll(".hero-slide");
-const dots = document.querySelectorAll(".dot");
-let currentSlide = 0;
-let interval = setInterval(nextSlide, 5000);
+  function nextSlide() {
+    let next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+  }
 
-function showSlide(index) {
-  slides.forEach((slide) => slide.classList.remove("active"));
-  dots.forEach((dot) => dot.classList.remove("active"));
+  function prevSlide() {
+    let prev = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prev);
+  }
 
-  slides[index].classList.add("active");
-  dots[index].classList.add("active");
-
-  currentSlide = index;
-}
-
-function nextSlide() {
-  let next = (currentSlide + 1) % slides.length;
-  showSlide(next);
-}
-
-function prevSlide() {
-  let prev = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(prev);
-}
-
-document.querySelector(".hero-arrow.right").addEventListener("click", () => {
-  nextSlide();
-  resetInterval();
-});
-
-document.querySelector(".hero-arrow.left").addEventListener("click", () => {
-  prevSlide();
-  resetInterval();
-});
-
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    showSlide(index);
+  document.querySelector(".hero-arrow.right").addEventListener("click", () => {
+    nextSlide();
     resetInterval();
   });
-});
 
-function resetInterval() {
-  clearInterval(interval);
-  interval = setInterval(nextSlide, 8000);
-}
+  document.querySelector(".hero-arrow.left").addEventListener("click", () => {
+    prevSlide();
+    resetInterval();
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showSlide(index);
+      resetInterval();
+    });
+  });
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 8000);
+  }
+
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  const header = document.getElementById("main-navbar");
+
+  // Show button after 300px scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  });
+
+  // Smooth scroll to top (800ms)
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
 
 $(document).ready(function () {
   $(".gallery-slider").slick({
@@ -158,10 +177,11 @@ form.addEventListener("submit", function (e) {
   });
 
   // Checkbox validation
-  const errorMessage = document.querySelector("#terms-error");
   const terms = document.getElementById("terms");
 
   if (!terms.checked) {
+    const errorMessage = document.getElementById("terms-error");
+    console.log(errorMessage);
     errorMessage.textContent = "You must agree to terms";
     isValid = false;
   }
@@ -190,7 +210,7 @@ newsletterForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const emailValue = newsletterEmail.value.trim();
-  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!pattern.test(emailValue)) {
     newsletterError.textContent = "Please enter a valid email address";
@@ -201,23 +221,4 @@ newsletterForm.addEventListener("submit", function (e) {
     newsletterEmail.value = "";
     alert("Subscribed successfully!");
   }
-});
-
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-// Show button after 300px scroll
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollTopBtn.classList.add("show");
-  } else {
-    scrollTopBtn.classList.remove("show");
-  }
-});
-
-// Smooth scroll to top (800ms)
-scrollTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
 });
