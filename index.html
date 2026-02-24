@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Velocity Motors | Drive the Future</title>
+    <title>Velocity | Drive the Future</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
@@ -23,25 +29,30 @@
 
   <body>
     <!-- NAVBAR -->
+
     <!-- ================= HEADER ================= -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar" id="main-navbar">
       <div class="container">
         <!-- Logo -->
-        <div class="logo">
-          <i class="fa-solid fa-car-side"></i>
+        <a href="#" class="navbar-brand fw-bold logo text-decoration-none">
+          <i class="fa-solid fa-car-side text-primary"></i>
           <span>VELOCITY</span>
-        </div>
+        </a>
+
         <!-- Mobile Toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-expanded="false">
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <i class="fa fa-bars"></i>
+          <i class="fa fa-times"></i>
         </button>
 
         <!-- Menu -->
         <div class="collapse navbar-collapse" id="mainMenu">
-          <ul class="navbar-nav mx-auto">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
             <!-- Models Mega Menu -->
             <li class="nav-item dropdown position-static">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Models </a>
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Models <i class="fa fa-chevron-down d-inline-block d-md-none"></i> </a>
 
               <!-- Desktop Mega Menu -->
               <div class="dropdown-menu mega-menu p-4 border-0 shadow">
@@ -49,39 +60,47 @@
                   <!-- Model Item -->
                   <div class="col-lg-3 col-md-6 mb-4">
                     <div class="model-item">
-                      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" class="img-fluid rounded mb-2" />
-                      <h6 class="fw-bold">
-                        Velocity X
-                        <span class="badge bg-danger">New</span>
-                      </h6>
-                      <small class="text-muted">Luxury Sedan</small>
+                      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" class="img-fluid rounded mb-2" loading="lazy" />
+                      <div class="model-item-content">
+                        <h6 class="fw-bold">
+                          Velocity X
+                          <span class="badge bg-danger">New</span>
+                        </h6>
+                        <small class="text-muted">Luxury Sedan</small>
+                      </div>
                     </div>
                   </div>
 
                   <div class="col-lg-3 col-md-6 mb-4">
                     <div class="model-item">
-                      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" class="img-fluid rounded mb-2" />
-                      <h6 class="fw-bold">
-                        Velocity EV
-                        <span class="badge bg-success">Electric</span>
-                      </h6>
-                      <small class="text-muted">100% Electric</small>
+                      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" class="img-fluid rounded mb-2" loading="lazy" />
+                      <div class="model-item-content">
+                        <h6 class="fw-bold">
+                          Velocity EV
+                          <span class="badge bg-success">Electric</span>
+                        </h6>
+                        <small class="text-muted">100% Electric</small>
+                      </div>
                     </div>
                   </div>
 
                   <div class="col-lg-3 col-md-6 mb-4">
                     <div class="model-item">
-                      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" class="img-fluid rounded mb-2" />
-                      <h6 class="fw-bold">Velocity SUV</h6>
-                      <small class="text-muted">Adventure Ready</small>
+                      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" class="img-fluid rounded mb-2" loading="lazy" />
+                      <div class="model-item-content">
+                        <h6 class="fw-bold">Velocity SUV</h6>
+                        <small class="text-muted">Adventure Ready</small>
+                      </div>
                     </div>
                   </div>
 
                   <div class="col-lg-3 col-md-6 mb-4">
                     <div class="model-item">
-                      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7" class="img-fluid rounded mb-2" />
-                      <h6 class="fw-bold">Velocity Sport</h6>
-                      <small class="text-muted">Racing DNA</small>
+                      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7" class="img-fluid rounded mb-2" loading="lazy" />
+                      <div class="model-item-content">
+                        <h6 class="fw-bold">Velocity Sport</h6>
+                        <small class="text-muted">Racing DNA</small>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -89,51 +108,16 @@
             </li>
 
             <!-- Other Menu Items -->
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Technology</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+            <li class="nav-item"><a class="nav-link" href="#technology">Technology</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
 
           <!-- Test Drive Button -->
-          <a href="#" class="btn btn-primary-custom ms-lg-3"> Book Test Drive </a>
+          <a href="#" class="btn btn-primary-custom ms-lg-3 fw-bold">Test Drive </a>
         </div>
       </div>
     </nav>
-
-    <header class="main-header" id="header">
-      <div class="container nav-container">
-        <!-- Logo -->
-        <div class="logo">
-          <i class="fa-solid fa-car-side"></i>
-          <span>VELOCITY</span>
-        </div>
-
-        <!-- Desktop Navigation -->
-        <nav class="desktop-nav">
-          <ul>
-            <li><a href="#home" class="nav-link active">Home</a></li>
-
-            <li class="models-link">
-              <a href="#models" class="nav-link">Models</a>
-            </li>
-
-            <li><a href="#technology" class="nav-link">Technology</a></li>
-            <li><a href="#gallery" class="nav-link">Gallery</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-
-        <!-- Test Drive Button -->
-        <a href="#contact" class="btn-test-drive">Test Drive</a>
-
-        <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </header>
 
     <!-- HERO -->
     <section class="hero-slider" id="home">
@@ -166,7 +150,7 @@
       </div>
 
       <!-- Slide 3 -->
-      <div class="hero-slide" style="background-image: url(&quot;https://images.unsplash.com/photo-1549924231-f129b911e442&quot;)">
+      <div class="hero-slide" style="background-image: url(&quot;https://images.unsplash.com/photo-1502877338535-766e1452684a&quot;)">
         <div class="hero-overlay"></div>
 
         <div class="hero-content container">
@@ -204,24 +188,30 @@
           <article class="model-card">
             <div class="card-image">
               <span class="badge badge-orange">New</span>
-              <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Velocity Sport Car" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Velocity Sport Car" loading="lazy" width="345" height="220" />
             </div>
             <div class="card-content">
               <h3>Velocity Sport</h3>
-              <p class="specs">0-60 in 3.2s • 650 HP</p>
-              <a href="#" class="card-link"> Explore Model <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <p class="specs"><i class="fa fa-users text-primary me-1"></i>0-60 in 3.2s <i class="fa fa-leaf text-primary mx-1"></i>650 HP</p>
+              <div class="card-footer">
+                <a href="#" class="card-link"> View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              </div>
             </div>
           </article>
 
           <!-- Velocity SUV -->
           <article class="model-card">
             <div class="card-image">
-              <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" alt="Velocity SUV" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" alt="Velocity SUV" loading="lazy" width="345" height="220" />
             </div>
             <div class="card-content">
               <h3>Velocity SUV</h3>
-              <p class="specs">7 Seats • AWD</p>
-              <a href="#" class="card-link"> Explore Model <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <p class="specs"><i class="fa fa-users text-primary me-1"></i> Seats <i class="fa fa-leaf text-primary mx-1"></i>650 HP</p>
+              <div class="card-footer">
+                <a href="#" class="card-link"> View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              </div>
             </div>
           </article>
 
@@ -229,24 +219,30 @@
           <article class="model-card">
             <div class="card-image">
               <span class="badge badge-green">Electric</span>
-              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Velocity E-Drive Electric Car" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Velocity E-Drive Electric Car" loading="lazy" width="345" height="220" />
             </div>
             <div class="card-content">
               <h3>Velocity E-Drive</h3>
-              <p class="specs">450 miles • Zero Emissions</p>
-              <a href="#" class="card-link"> Explore Model <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <p class="specs"><i class="fa fa-users text-primary me-1"></i> Seats <i class="fa fa-leaf text-primary mx-1"></i>650 HP</p>
+              <div class="card-footer">
+                <a href="#" class="card-link"> View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              </div>
             </div>
           </article>
 
           <!-- Velocity Luxury Sedan -->
           <article class="model-card">
             <div class="card-image">
-              <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Velocity Luxury Sedan" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Velocity Luxury Sedan" loading="lazy" width="345" height="220" />
             </div>
             <div class="card-content">
               <h3>Velocity Luxury Sedan</h3>
-              <p class="specs">Premium Interior • 5-Star Safety</p>
-              <a href="#" class="card-link"> Explore Model <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <p class="specs"><i class="fa fa-users text-primary me-1"></i> Seats <i class="fa fa-leaf text-primary mx-1"></i>650 HP</p>
+              <div class="card-footer">
+                <a href="#" class="card-link"> View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              </div>
             </div>
           </article>
 
@@ -254,12 +250,15 @@
           <article class="model-card">
             <div class="card-image">
               <span class="badge badge-orange">Limited</span>
-              <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" alt="Velocity GT Coupe" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" alt="Velocity GT Coupe" loading="lazy" width="345" height="220" />
             </div>
             <div class="card-content">
               <h3>Velocity GT Coupe</h3>
-              <p class="specs">0-60 in 2.9s • 720 HP</p>
-              <a href="#" class="card-link"> Explore Model <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <p class="specs"><i class="fa fa-users text-primary me-1"></i> Seats <i class="fa fa-leaf text-primary mx-1"></i>650 HP</p>
+              <div class="card-footer">
+                <a href="#" class="card-link"> View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
+              </div>
             </div>
           </article>
         </div>
@@ -268,10 +267,10 @@
 
     <!--  VIDEO BACKGROUND SECTION -->
 
-    <section class="video-section" role="region" aria-labelledby="video-title">
+    <section id="technology" class="video-section" role="region" aria-labelledby="video-title">
       <!-- Background Video -->
       <video class="bg-video" autoplay muted loop playsinline aria-hidden="true">
-        <source src="assets/videos/velocity.mp4" type="video/mp4" />
+        <source src="assets/videos/velocity.mp4" type="video/mp4" loading="lazy" />
         Your browser does not support the video tag.
       </video>
 
@@ -287,7 +286,7 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="gallery-section" role="region" aria-labelledby="gallery-title">
+    <section id="gallery" class="gallery-section" role="region" aria-labelledby="gallery-title">
       <div class="container">
         <div class="section-header text-center">
           <h2 id="gallery-title" class="section-title">Gallery</h2>
@@ -296,7 +295,7 @@
         <div class="gallery-slider">
           <!-- Item 1 -->
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753" alt="Performance car driving" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753" alt="Performance car driving" loading="lazy" width="350" height="350" />
             <div class="overlay">
               <h3>Performance</h3>
               <p>Unleash raw power on every drive</p>
@@ -305,7 +304,7 @@
 
           <!-- Item 2 -->
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Luxury interior car" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Luxury interior car" loading="lazy" width="350" height="350" />
             <div class="overlay">
               <h3>Luxury</h3>
               <p>Experience premium comfort</p>
@@ -314,7 +313,7 @@
 
           <!-- Item 3 -->
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Car innovation dashboard" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Car innovation dashboard" loading="lazy" width="350" height="350" />
             <div class="overlay">
               <h3>Innovation</h3>
               <p>Cutting-edge technology</p>
@@ -323,7 +322,7 @@
 
           <!-- Item 4 -->
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" alt="Modern car design" />
+            <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" alt="Modern car design" loading="lazy" width="350" height="350" />
             <div class="overlay">
               <h3>Design</h3>
               <p>Timeless elegance meets modern style</p>
@@ -332,7 +331,7 @@
 
           <!-- Item 5 -->
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Adventure SUV journey" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Adventure SUV journey" loading="lazy" width="350" height="350" />
             <div class="overlay">
               <h3>Adventure</h3>
               <p>Built for every journey</p>
@@ -345,29 +344,51 @@
     <!-- CONTACT -->
     <section class="contact-section" id="contact" role="region" aria-labelledby="contact-title">
       <div class="container">
-        <div class="section-header text-center">
-          <h2 id="contact-title" class="section-title">Request a Test Drive</h2>
-        </div>
-
         <div class="contact-wrapper">
           <!-- LEFT INFO BOX -->
           <div class="contact-info">
-            <h3>Get in Touch</h3>
+            <h2 id="contact-title" class="section-title">Schedule Your Test Drive</h2>
             <p>Have questions about our models? Schedule a test drive today and experience Velocity excellence.</p>
 
             <div class="info-item">
-              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-              <span>123 Velocity Drive, Auto City</span>
+              <div>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold">Visit our showroom</h5>
+                <p class="mb-0">123 Velocity Drive, Auto City</p>
+                <p>123 Velocity Drive, Auto City</p>
+              </div>
             </div>
-
             <div class="info-item">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <span>+91 9876543210</span>
+              <div>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold">Call Us</h5>
+                <p class="mb-0">+91 9876543210</p>
+                <p>123 Velocity Drive, Auto City</p>
+              </div>
             </div>
-
             <div class="info-item">
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-              <span>info@velocitymotors.com</span>
+              <div>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold">Email Us</h5>
+                <p class="mb-0">info@velocitymotors.com</p>
+                <p class="mb-0">info@velocitymotors.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div>
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold">Business Hours</h5>
+                <p class="mb-0">Monday - Friday: 9:00 AM - 8:00 PM</p>
+                <p>Sunday: Closed</p>
+              </div>
             </div>
           </div>
 
@@ -415,13 +436,14 @@
                 <textarea id="comments" rows="4"></textarea>
               </div>
 
-              <div class="form-group checkbox-group">
+              <div class="checkbox-group d-flex gap-1 mb-3">
                 <input type="checkbox" id="terms" />
                 <label for="terms">I agree to the terms and conditions *</label>
                 <small class="error-message"></small>
               </div>
-
-              <button type="submit" class="btn btn-primary">Submit Request</button>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-primary-custom py-3 fw-bold">Submit Request</button>
+              </div>
             </form>
 
             <!-- Success Message -->
@@ -440,8 +462,8 @@
           <!-- Brand Column -->
           <div class="footer-brand">
             <!-- Logo -->
-            <div class="footer-logo">
-              <i class="fa-solid fa-car-side"></i>
+            <div class="footer-logo logo">
+              <i class="fa-solid fa-car-side text-primary"></i>
               <span>VELOCITY</span>
             </div>
             <p>Redefining automotive excellence with performance, luxury, and cutting-edge innovation.</p>
@@ -502,8 +524,10 @@
             <p>Subscribe for updates and exclusive offers.</p>
 
             <form id="newsletterForm" novalidate>
-              <input type="email" id="newsletterEmail" placeholder="Enter your email" aria-required="true" />
-              <button type="submit">Subscribe</button>
+              <div class="newsletter-form">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email" aria-required="true" />
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+              </div>
               <small class="newsletter-error"></small>
             </form>
           </div>

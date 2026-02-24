@@ -1,3 +1,13 @@
+window.addEventListener("scroll", () => {
+  const header = document.getElementById("main-navbar");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
 const slides = document.querySelectorAll(".hero-slide");
 const dots = document.querySelectorAll(".dot");
 let currentSlide = 0;
@@ -42,7 +52,7 @@ dots.forEach((dot, index) => {
 
 function resetInterval() {
   clearInterval(interval);
-  interval = setInterval(nextSlide, 5000);
+  interval = setInterval(nextSlide, 8000);
 }
 
 $(document).ready(function () {
